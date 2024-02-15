@@ -88,7 +88,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     height: 100vh;
     position: fixed;
     top: 0;
-    left: -100vw;
+    left: 0;
     overflow-y: auto;
     z-index: 0;
     background-color: hsl(0,0%,100%);
@@ -97,6 +97,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 .page:target {
     left: 0vw;
     z-index: 1;
+    display: block;
+}
+
+.page:not(:target) {
+    left: -100vw;
+    display: none;
 }
 </style>
 
