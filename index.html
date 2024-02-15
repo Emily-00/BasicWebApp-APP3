@@ -22,270 +22,273 @@ https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
 
-  <!--Formatting source information and webpage title.-->
-  <head>
+<!--Formatting source information and webpage title.-->
+<head>
     <title>Which Plushie Are You?</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="w3.css">
     <link rel="stylesheet" href="w3-colors-flat.css">
-  </head>
+</head>
 
-  
+
 
 <!--Javascript code.-->
 <script>
-	var plushie = "";
+    var plushie = "";
 
-	function answerQuestion1(option) {
-		plushie += option;
-		document.getElementById("question1").style.display = "none";
-		document.getElementById("question2").style.display = "block";
-	}
+    function answerQuestion1(option) {
+        plushie += option;
+        document.getElementById("question1").style.display = "none";
+        document.getElementById("question2").style.display = "block";
+    }
 
-	function answerQuestion2(option) {
-		plushie += option;
-		document.getElementById("question2").style.display = "none";
-		document.getElementById("question3").style.display = "block";
-	}
+    function answerQuestion2(option) {
+        plushie += option;
+        document.getElementById("question2").style.display = "none";
+        document.getElementById("question3").style.display = "block";
+    }
 
-	function answerQuestion3(option) {
-		plushie += option;
-		document.getElementById("question3").style.display = "none";
-		document.getElementById("question4").style.display = "block";
-	}
+    function answerQuestion3(option) {
+        plushie += option;
+        document.getElementById("question3").style.display = "none";
+        document.getElementById("question4").style.display = "block";
+    }
 
-	function answerQuestion4(option) {
-		plushie += option;
-		document.getElementById("question4").style.display = "none";
-		document.getElementById("question5").style.display = "block";
-	}
+    function answerQuestion4(option) {
+        plushie += option;
+        document.getElementById("question4").style.display = "none";
+        document.getElementById("question5").style.display = "block";
+    }
 
-	function answerQuestion5(option) {
-		plushie += option;
-		document.getElementById("question5").style.display = "none";
-		document.getElementById("finalpage").style.display = "block";
-		document.getElementById("finalResult").innerHTML = "You are a " + plushie + " plushie!";
-	}
+    function answerQuestion5(option) {
+        plushie += option;
+        document.getElementById("question5").style.display = "none";
+        document.getElementById("finalpage").style.display = "block";
+        document.getElementById("finalResult").innerHTML = "You are a " + plushie + " plushie!";
+    }
 
-	function resetQuiz() {
-		plushie = "";
-		document.getElementById("finalpage").style.display = "none";
-		document.getElementById("content").style.display = "block";
-	}
+    function resetQuiz() {
+        plushie = "";
+        document.getElementById("finalpage").style.display = "none";
+        document.getElementById("content").style.display = "block";
+        document.getElementById("question1").style.display = "none";
+        document.getElementById("question2").style.display = "none";
+        document.getElementById("question3").style.display = "none";
+        document.getElementById("question4").style.display = "none";
+        document.getElementById("question5").style.display = "none";
+    }
 </script>
-  
-  
- 
+
+
+
 <!--CSS webpage style/format settings.-->
-<style>	
-.body {
-     margin: 0 auto;
-}
+<style>
+    .body {
+        margin: 0 auto;
+    }
 
-.page {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow-y: auto;
-    z-index: 0;
-    background-color: hsl(0,0%,100%);
-}
+    .page {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        overflow-y: auto;
+        z-index: 0;
+        background-color: hsl(0,0%,100%);
+    }
 
-.page:target {
-    left: 0vw;
-    z-index: 1;
-    display: block;
-}
+    .page:target {
+        left: 0vw;
+        z-index: 1;
+        display: block;
+    }
 
-.page:not(:target) {
-    left: -100vw;
-    display: none;
-}
+    .page:not(:target) {
+        left: -100vw;
+        display: none;
+    }
 </style>
 
 
 
 <!--Main HTML body section.-->
 <body>
-  <!--Landing page content.-->
-  <div id="content" class="w3-container">
-  	<!--Header!-->
-	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>Which Plushie Are You?</h1>
-	</div>
-	
-	  <p>Welcome to the "Which Plushie Are You?" quiz!</p>
-	
-	  <a href="#question1" class="w3-btn w3-grey w3-round">Start Quiz</a>
-	
-	  <p>Answer the questions to find out which plushie matches your personality.</p>
-  
-<!--FIRST SUBPAGE-->
-<div id="question1" class="page">
-	<div id="header2" class="w3-container w3-flat-carrot">
-		<h1>Question 1</h1>
-	</div>
-	
-  <center>
-    
-    	<div id="content2" class="w3-container">
-        	<p>What is your favorite color?</p>    
-    	</div>
-	
-	<!--Form element. This allows for user input in HTML.-->
-	<form>
-		<!--Radio buttons for color selection.-->
-		<input type="radio" id="optionA" name="question1" value="Bunny" onclick="answerQuestion1(this.value)">
-		<label for="optionA">Bunny</label><br>
+<!--Landing page content.-->
+<div id="content" class="w3-container">
+    <!--Header!-->
+    <div id="header" class="w3-container w3-flat-carrot">
+        <h1>Which Plushie Are You?</h1>
+    </div>
 
-		<input type="radio" id="optionB" name="question1" value="Bear" onclick="answerQuestion1(this.value)">
-		<label for="optionB">Bear</label><br>
+    <p>Welcome to the "Which Plushie Are You?" quiz!</p>
 
-		<input type="radio" id="optionC" name="question1" value="Cat" onclick="answerQuestion1(this.value)">
-		<label for="optionC">Cat</label><br>
-	</form>
-    
-  </center>
-</div>  
-  
-  
-<!--SECOND SUBPAGE-->
-<div id="question2" class="page">
-	<div id="header2" class="w3-container w3-flat-carrot">
-		<h1>Question 2</h1>
-	</div>
-	
-  <center>
-    
-    	<div id="content2" class="w3-container">
-        	<p>What is your favorite activity?</p>    
-    	</div>
-	
-	<!--Form element. This allows for user input in HTML.-->
-	<form>
-		<!--Radio buttons for activity selection.-->
-		<input type="radio" id="optionA" name="question2" value="Bunny" onclick="answerQuestion2(this.value)">
-		<label for="optionA">Bunny</label><br>
+    <a href="#question1" class="w3-btn w3-grey w3-round">Start Quiz</a>
 
-		<input type="radio" id="optionB" name="question2" value="Bear" onclick="answerQuestion2(this.value)">
-		<label for="optionB">Bear</label><br>
+    <p>Answer the questions to find out which plushie matches your personality.</p>
 
-		<input type="radio" id="optionC" name="question2" value="Cat" onclick="answerQuestion2(this.value)">
-		<label for="optionC">Cat</label><br>
-	</form>
-    
-  </center>
-</div>  
-  
-<!--THIRD SUBPAGE-->
-<div id="question3" class="page">
-	<div id="header2" class="w3-container w3-flat-carrot">
-		<h1>Question 3</h1>
-	</div>
-	
-  <center>
-    
-    	<div id="content2" class="w3-container">
-        	<p>What is your favorite food?</p>    
-    	</div>
-	
-	<!--Form element. This allows for user input in HTML.-->
-	<form>
-		<!--Radio buttons for food selection.-->
-		<input type="radio" id="optionA" name="question3" value="Bunny" onclick="answerQuestion3(this.value)">
-		<label for="optionA">Bunny</label><br>
+    <!--FIRST SUBPAGE-->
+    <div id="question1" class="page">
+        <div id="header2" class="w3-container w3-flat-carrot">
+            <h1>Question 1</h1>
+        </div>
 
-		<input type="radio" id="optionB" name="question3" value="Bear" onclick="answerQuestion3(this.value)">
-		<label for="optionB">Bear</label><br>
+        <center>
 
-		<input type="radio" id="optionC" name="question3" value="Cat" onclick="answerQuestion3(this.value)">
-		<label for="optionC">Cat</label><br>
-	</form>
-    
-  </center>
-</div>  
+            <div id="content2" class="w3-container">
+                <p>What is your favorite color?</p>
+            </div>
 
-<!--FOURTH SUBPAGE-->
-<div id="question4" class="page">
-	<div id="header2" class="w3-container w3-flat-carrot">
-		<h1>Question 4</h1>
-	</div>
-	
-  <center>
-    
-    	<div id="content2" class="w3-container">
-        	<p>What is your favorite hobby?</p>    
-    	</div>
-	
-	<!--Form element. This allows for user input in HTML.-->
-	<form>
-		<!--Radio buttons for hobby selection.-->
-		<input type="radio" id="optionA" name="question4" value="Bunny" onclick="answerQuestion4(this.value)">
-		<label for="optionA">Bunny</label><br>
+            <!--Form element. This allows for user input in HTML.-->
+            <form>
+                <!--Radio buttons for color selection.-->
+                <input type="radio" id="optionA" name="question1" value="Bunny" onclick="answerQuestion1(this.value)">
+                <label for="optionA">Bunny</label><br>
 
-		<input type="radio" id="optionB" name="question4" value="Bear" onclick="answerQuestion4(this.value)">
-		<label for="optionB">Bear</label><br>
+                <input type="radio" id="optionB" name="question1" value="Bear" onclick="answerQuestion1(this.value)">
+                <label for="optionB">Bear</label><br>
 
-		<input type="radio" id="optionC" name="question4" value="Cat" onclick="answerQuestion4(this.value)">
-		<label for="optionC">Cat</label><br>
-	</form>
-    
-  </center>
-</div>  
+                <input type="radio" id="optionC" name="question1" value="Cat" onclick="answerQuestion1(this.value)">
+                <label for="optionC">Cat</label><br>
+            </form>
 
-<!--FIFTH SUBPAGE-->
-<div id="question5" class="page">
-	<div id="header2" class="w3-container w3-flat-carrot">
-		<h1>Question 5</h1>
-	</div>
-	
-  <center>
-    
-    	<div id="content2" class="w3-container">
-        	<p>What is your favorite place to relax?</p>    
-    	</div>
-	
-	<!--Form element. This allows for user input in HTML.-->
-	<form>
-		<!--Radio buttons for relaxation place selection.-->
-		<input type="radio" id="optionA" name="question5" value="Bunny" onclick="answerQuestion5(this.value)">
-		<label for="optionA">Bunny</label><br>
+        </center>
+    </div>
 
-		<input type="radio" id="optionB" name="question5" value="Bear" onclick="answerQuestion5(this.value)">
-		<label for="optionB">Bear</label><br>
+    <!--SECOND SUBPAGE-->
+    <div id="question2" class="page">
+        <div id="header2" class="w3-container w3-flat-carrot">
+            <h1>Question 2</h1>
+        </div>
 
-		<input type="radio" id="optionC" name="question5" value="Cat" onclick="answerQuestion5(this.value)">
-		<label for="optionC">Cat</label><br>
-	</form>
-    
-  </center>
-</div>  
+        <center>
 
+            <div id="content2" class="w3-container">
+                <p>What is your favorite food?</p>
+            </div>
 
-<!--FINAL SUBPAGE-->
-<div id="finalpage" class="page">
-	<div id="finalheader" class="w3-container w3-flat-carrot">
-		<h1>Result</h1>
-	</div>
-	
-  <center>
-    
-	  <div id="finalcontent" class="w3-container">
-		  <p id="finalResult"></p>
-	  </div>
-  
-  <a href="#content" onclick="resetQuiz();" class="w3-btn w3-black">Take Again</a>
-    
-  </center>
-</div>
-  
-<!--Footer!-->
-<footer class="w3-bottom w3-container w3-flat-carrot">
-	<p>Emily Zhang</p>
-</footer>
+            <!--Form element. This allows for user input in HTML.-->
+            <form>
+                <!--Radio buttons for food selection.-->
+                <input type="radio" id="optionA" name="question2" value="Bunny" onclick="answerQuestion2(this.value)">
+                <label for="optionA">Bunny</label><br>
+
+                <input type="radio" id="optionB" name="question2" value="Bear" onclick="answerQuestion2(this.value)">
+                <label for="optionB">Bear</label><br>
+
+                <input type="radio" id="optionC" name="question2" value="Cat" onclick="answerQuestion2(this.value)">
+                <label for="optionC">Cat</label><br>
+            </form>
+
+        </center>
+    </div>
+
+    <!--THIRD SUBPAGE-->
+    <div id="question3" class="page">
+        <div id="header2" class="w3-container w3-flat-carrot">
+            <h1>Question 3</h1>
+        </div>
+
+        <center>
+
+            <div id="content2" class="w3-container">
+                <p>What is your favorite activity?</p>
+            </div>
+
+            <!--Form element. This allows for user input in HTML.-->
+            <form>
+                <!--Radio buttons for activity selection.-->
+                <input type="radio" id="optionA" name="question3" value="Bunny" onclick="answerQuestion3(this.value)">
+                <label for="optionA">Bunny</label><br>
+
+                <input type="radio" id="optionB" name="question3" value="Bear" onclick="answerQuestion3(this.value)">
+                <label for="optionB">Bear</label><br>
+
+                <input type="radio" id="optionC" name="question3" value="Cat" onclick="answerQuestion3(this.value)">
+                <label for="optionC">Cat</label><br>
+            </form>
+
+        </center>
+    </div>
+
+    <!--FOURTH SUBPAGE-->
+    <div id="question4" class="page">
+        <div id="header2" class="w3-container w3-flat-carrot">
+            <h1>Question 4</h1>
+        </div>
+
+        <center>
+
+            <div id="content2" class="w3-container">
+                <p>What is your favorite hobby?</p>
+            </div>
+
+            <!--Form element. This allows for user input in HTML.-->
+            <form>
+                <!--Radio buttons for hobby selection.-->
+                <input type="radio" id="optionA" name="question4" value="Bunny" onclick="answerQuestion4(this.value)">
+                <label for="optionA">Bunny</label><br>
+
+                <input type="radio" id="optionB" name="question4" value="Bear" onclick="answerQuestion4(this.value)">
+                <label for="optionB">Bear</label><br>
+
+                <input type="radio" id="optionC" name="question4" value="Cat" onclick="answerQuestion4(this.value)">
+                <label for="optionC">Cat</label><br>
+            </form>
+
+        </center>
+    </div>
+
+    <!--FIFTH SUBPAGE-->
+    <div id="question5" class="page">
+        <div id="header2" class="w3-container w3-flat-carrot">
+            <h1>Question 5</h1>
+        </div>
+
+        <center>
+
+            <div id="content2" class="w3-container">
+                <p>What is your favorite place to relax?</p>
+            </div>
+
+            <!--Form element. This allows for user input in HTML.-->
+            <form>
+                <!--Radio buttons for relaxation place selection.-->
+                <input type="radio" id="optionA" name="question5" value="Bunny" onclick="answerQuestion5(this.value)">
+                <label for="optionA">Bunny</label><br>
+
+                <input type="radio" id="optionB" name="question5" value="Bear" onclick="answerQuestion5(this.value)">
+                <label for="optionB">Bear</label><br>
+
+                <input type="radio" id="optionC" name="question5" value="Cat" onclick="answerQuestion5(this.value)">
+                <label for="optionC">Cat</label><br>
+            </form>
+
+        </center>
+    </div>
+
+    <!--FINAL SUBPAGE-->
+    <div id="finalpage" class="page">
+        <div id="finalheader" class="w3-container w3-flat-carrot">
+            <h1>Result</h1>
+        </div>
+
+        <center>
+
+            <div id="finalcontent" class="w3-container">
+                <p id="finalResult"></p>
+            </div>
+
+            <a href="#content" onclick="resetQuiz();" class="w3-btn w3-black">Take Again</a>
+
+        </center>
+    </div>
+
+    <!--Footer!-->
+    <footer class="w3-bottom w3-container w3-flat-carrot">
+        <p>Emily Zhang</p>
+    </footer>
 </div>
 
 </body>
