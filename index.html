@@ -31,41 +31,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     <link rel="stylesheet" href="w3-colors-flat.css">
 </head>
 
-
-
 <!--Javascript code.-->
 <script>
     var plushie = "";
 
-    function answerQuestion1(option) {
+    function answerQuestion(option, nextQuestionId) {
         plushie += option;
-        document.getElementById("question1").style.display = "none";
-        document.getElementById("question2").style.display = "block";
-    }
-
-    function answerQuestion2(option) {
-        plushie += option;
-        document.getElementById("question2").style.display = "none";
-        document.getElementById("question3").style.display = "block";
-    }
-
-    function answerQuestion3(option) {
-        plushie += option;
-        document.getElementById("question3").style.display = "none";
-        document.getElementById("question4").style.display = "block";
-    }
-
-    function answerQuestion4(option) {
-        plushie += option;
-        document.getElementById("question4").style.display = "none";
-        document.getElementById("question5").style.display = "block";
-    }
-
-    function answerQuestion5(option) {
-        plushie += option;
-        document.getElementById("question5").style.display = "none";
-        document.getElementById("finalpage").style.display = "block";
-        document.getElementById("finalResult").innerHTML = "You are a " + plushie + " plushie!";
+        document.getElementById(nextQuestionId).style.display = "block";
+        window.location.href = "#" + nextQuestionId;
     }
 
     function resetQuiz() {
@@ -79,8 +52,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         document.getElementById("question5").style.display = "none";
     }
 </script>
-
-
 
 <!--CSS webpage style/format settings.-->
 <style>
@@ -99,25 +70,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         background-color: hsl(0,0%,100%);
     }
 
-    .page:target {
-        left: 0vw;
-        z-index: 1;
-        display: block;
-    }
-
     .page:not(:target) {
-        left: -100vw;
         display: none;
     }
 </style>
-
-
 
 <!--Main HTML body section.-->
 <body>
 <!--Landing page content.-->
 <div id="content" class="w3-container">
-    <!--Header!-->
+    <!--Header-->
     <div id="header" class="w3-container w3-flat-carrot">
         <h1>Which Plushie Are You?</h1>
     </div>
@@ -128,14 +90,39 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
     <p>Answer the questions to find out which plushie matches your personality.</p>
 
-    <!--FIRST SUBPAGE-->
+    <!--Question 1-->
     <div id="question1" class="page">
         <div id="header2" class="w3-container w3-flat-carrot">
             <h1>Question 1</h1>
         </div>
 
         <center>
+            <div id="content2" class="w3-container">
+                <p>What is your favorite animal?</p>
+            </div>
 
+            <!--Form element. This allows for user input in HTML.-->
+            <form>
+                <!--Radio buttons for animal selection.-->
+                <input type="radio" id="optionA" name="question1" value="bunny" onclick="answerQuestion(this.value, 'question2')">
+                <label for="optionA">Bunny</label><br>
+
+                <input type="radio" id="optionB" name="question1" value="bear" onclick="answerQuestion(this.value, 'question2')">
+                <label for="optionB">Bear</label><br>
+
+                <input type="radio" id="optionC" name="question1" value="cat" onclick="answerQuestion(this.value, 'question2')">
+                <label for="optionC">Cat</label><br>
+            </form>
+        </center>
+    </div>
+
+    <!--Question 2-->
+    <div id="question2" class="page">
+        <div id="header2" class="w3-container w3-flat-carrot">
+            <h1>Question 2</h1>
+        </div>
+
+        <center>
             <div id="content2" class="w3-container">
                 <p>What is your favorite color?</p>
             </div>
@@ -143,27 +130,25 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             <!--Form element. This allows for user input in HTML.-->
             <form>
                 <!--Radio buttons for color selection.-->
-                <input type="radio" id="optionA" name="question1" value="Bunny" onclick="answerQuestion1(this.value)">
-                <label for="optionA">Bunny</label><br>
+                <input type="radio" id="optionD" name="question2" value="blue" onclick="answerQuestion(this.value, 'question3')">
+                <label for="optionD">Blue</label><br>
 
-                <input type="radio" id="optionB" name="question1" value="Bear" onclick="answerQuestion1(this.value)">
-                <label for="optionB">Bear</label><br>
+                <input type="radio" id="optionE" name="question2" value="pink" onclick="answerQuestion(this.value, 'question3')">
+                <label for="optionE">Pink</label><br>
 
-                <input type="radio" id="optionC" name="question1" value="Cat" onclick="answerQuestion1(this.value)">
-                <label for="optionC">Cat</label><br>
+                <input type="radio" id="optionF" name="question2" value="purple" onclick="answerQuestion(this.value, 'question3')">
+                <label for="optionF">Purple</label><br>
             </form>
-
         </center>
     </div>
 
-    <!--SECOND SUBPAGE-->
-    <div id="question2" class="page">
+    <!--Question 3-->
+    <div id="question3" class="page">
         <div id="header2" class="w3-container w3-flat-carrot">
-            <h1>Question 2</h1>
+            <h1>Question 3</h1>
         </div>
 
         <center>
-
             <div id="content2" class="w3-container">
                 <p>What is your favorite food?</p>
             </div>
@@ -171,55 +156,25 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             <!--Form element. This allows for user input in HTML.-->
             <form>
                 <!--Radio buttons for food selection.-->
-                <input type="radio" id="optionA" name="question2" value="Bunny" onclick="answerQuestion2(this.value)">
-                <label for="optionA">Bunny</label><br>
+                <input type="radio" id="optionG" name="question3" value="carrot" onclick="answerQuestion(this.value, 'question4')">
+                <label for="optionG">Carrot</label><br>
 
-                <input type="radio" id="optionB" name="question2" value="Bear" onclick="answerQuestion2(this.value)">
-                <label for="optionB">Bear</label><br>
+                <input type="radio" id="optionH" name="question3" value="honey" onclick="answerQuestion(this.value, 'question4')">
+                <label for="optionH">Honey</label><br>
 
-                <input type="radio" id="optionC" name="question2" value="Cat" onclick="answerQuestion2(this.value)">
-                <label for="optionC">Cat</label><br>
+                <input type="radio" id="optionI" name="question3" value="fish" onclick="answerQuestion(this.value, 'question4')">
+                <label for="optionI">Fish</label><br>
             </form>
-
         </center>
     </div>
 
-    <!--THIRD SUBPAGE-->
-    <div id="question3" class="page">
-        <div id="header2" class="w3-container w3-flat-carrot">
-            <h1>Question 3</h1>
-        </div>
-
-        <center>
-
-            <div id="content2" class="w3-container">
-                <p>What is your favorite activity?</p>
-            </div>
-
-            <!--Form element. This allows for user input in HTML.-->
-            <form>
-                <!--Radio buttons for activity selection.-->
-                <input type="radio" id="optionA" name="question3" value="Bunny" onclick="answerQuestion3(this.value)">
-                <label for="optionA">Bunny</label><br>
-
-                <input type="radio" id="optionB" name="question3" value="Bear" onclick="answerQuestion3(this.value)">
-                <label for="optionB">Bear</label><br>
-
-                <input type="radio" id="optionC" name="question3" value="Cat" onclick="answerQuestion3(this.value)">
-                <label for="optionC">Cat</label><br>
-            </form>
-
-        </center>
-    </div>
-
-    <!--FOURTH SUBPAGE-->
+    <!--Question 4-->
     <div id="question4" class="page">
         <div id="header2" class="w3-container w3-flat-carrot">
             <h1>Question 4</h1>
         </div>
 
         <center>
-
             <div id="content2" class="w3-container">
                 <p>What is your favorite hobby?</p>
             </div>
@@ -227,27 +182,25 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             <!--Form element. This allows for user input in HTML.-->
             <form>
                 <!--Radio buttons for hobby selection.-->
-                <input type="radio" id="optionA" name="question4" value="Bunny" onclick="answerQuestion4(this.value)">
-                <label for="optionA">Bunny</label><br>
+                <input type="radio" id="optionJ" name="question4" value="reading" onclick="answerQuestion(this.value, 'question5')">
+                <label for="optionJ">Reading</label><br>
 
-                <input type="radio" id="optionB" name="question4" value="Bear" onclick="answerQuestion4(this.value)">
-                <label for="optionB">Bear</label><br>
+                <input type="radio" id="optionK" name="question4" value="gardening" onclick="answerQuestion(this.value, 'finalpage')">
+                <label for="optionK">Gardening</label><br>
 
-                <input type="radio" id="optionC" name="question4" value="Cat" onclick="answerQuestion4(this.value)">
-                <label for="optionC">Cat</label><br>
+                <input type="radio" id="optionL" name="question4" value="drawing" onclick="answerQuestion(this.value, 'finalpage')">
+                <label for="optionL">Drawing</label><br>
             </form>
-
         </center>
     </div>
 
-    <!--FIFTH SUBPAGE-->
+    <!--Question 5-->
     <div id="question5" class="page">
         <div id="header2" class="w3-container w3-flat-carrot">
             <h1>Question 5</h1>
         </div>
 
         <center>
-
             <div id="content2" class="w3-container">
                 <p>What is your favorite place to relax?</p>
             </div>
@@ -255,16 +208,15 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             <!--Form element. This allows for user input in HTML.-->
             <form>
                 <!--Radio buttons for relaxation place selection.-->
-                <input type="radio" id="optionA" name="question5" value="Bunny" onclick="answerQuestion5(this.value)">
-                <label for="optionA">Bunny</label><br>
+                <input type="radio" id="optionM" name="question5" value="bed" onclick="answerQuestion(this.value, 'finalpage')">
+                <label for="optionM">Bed</label><br>
 
-                <input type="radio" id="optionB" name="question5" value="Bear" onclick="answerQuestion5(this.value)">
-                <label for="optionB">Bear</label><br>
+                <input type="radio" id="optionN" name="question5" value="garden" onclick="answerQuestion(this.value, 'finalpage')">
+                <label for="optionN">Garden</label><br>
 
-                <input type="radio" id="optionC" name="question5" value="Cat" onclick="answerQuestion5(this.value)">
-                <label for="optionC">Cat</label><br>
+                <input type="radio" id="optionO" name="question5" value="sofa" onclick="answerQuestion(this.value, 'finalpage')">
+                <label for="optionO">Sofa</label><br>
             </form>
-
         </center>
     </div>
 
@@ -275,17 +227,15 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         </div>
 
         <center>
-
             <div id="finalcontent" class="w3-container">
                 <p id="finalResult"></p>
             </div>
 
             <a href="#content" onclick="resetQuiz();" class="w3-btn w3-black">Take Again</a>
-
         </center>
     </div>
 
-    <!--Footer!-->
+    <!--Footer-->
     <footer class="w3-bottom w3-container w3-flat-carrot">
         <p>Emily Zhang</p>
     </footer>
