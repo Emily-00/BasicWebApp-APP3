@@ -40,17 +40,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         document.getElementById(nextQuestionId).style.display = "block";
         window.location.href = "#" + nextQuestionId;
     }
-
-    function resetQuiz() {
-        plushie = "";
-        document.getElementById("finalpage").style.display = "none";
-        document.getElementById("content").style.display = "block";
-        document.getElementById("question1").style.display = "none";
-        document.getElementById("question2").style.display = "none";
-        document.getElementById("question3").style.display = "none";
-        document.getElementById("question4").style.display = "none";
-        document.getElementById("question5").style.display = "none";
-    }
 </script>
 
 <!--CSS webpage style/format settings.-->
@@ -104,15 +93,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             <!--Form element. This allows for user input in HTML.-->
             <form>
                 <!--Radio buttons for animal selection.-->
-                <input type="radio" id="optionA" name="question1" value="bunny" onclick="answerQuestion(this.value, 'question2')">
+                <input type="radio" id="optionA" name="question1" value="bunny">
                 <label for="optionA">Bunny</label><br>
 
-                <input type="radio" id="optionB" name="question1" value="bear" onclick="answerQuestion(this.value, 'question2')">
+                <input type="radio" id="optionB" name="question1" value="bear">
                 <label for="optionB">Bear</label><br>
 
-                <input type="radio" id="optionC" name="question1" value="cat" onclick="answerQuestion(this.value, 'question2')">
+                <input type="radio" id="optionC" name="question1" value="cat">
                 <label for="optionC">Cat</label><br>
             </form>
+            <button onclick="answerQuestion(document.querySelector('input[name=question1]:checked').value, 'question2')">Next</button>
         </center>
     </div>
 
@@ -130,15 +120,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             <!--Form element. This allows for user input in HTML.-->
             <form>
                 <!--Radio buttons for color selection.-->
-                <input type="radio" id="optionD" name="question2" value="blue" onclick="answerQuestion(this.value, 'question3')">
+                <input type="radio" id="optionD" name="question2" value="blue">
                 <label for="optionD">Blue</label><br>
 
-                <input type="radio" id="optionE" name="question2" value="pink" onclick="answerQuestion(this.value, 'question3')">
+                <input type="radio" id="optionE" name="question2" value="pink">
                 <label for="optionE">Pink</label><br>
 
-                <input type="radio" id="optionF" name="question2" value="purple" onclick="answerQuestion(this.value, 'question3')">
+                <input type="radio" id="optionF" name="question2" value="purple">
                 <label for="optionF">Purple</label><br>
             </form>
+            <button onclick="answerQuestion(document.querySelector('input[name=question2]:checked').value, 'question3')">Next</button>
         </center>
     </div>
 
@@ -156,15 +147,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             <!--Form element. This allows for user input in HTML.-->
             <form>
                 <!--Radio buttons for food selection.-->
-                <input type="radio" id="optionG" name="question3" value="carrot" onclick="answerQuestion(this.value, 'question4')">
+                <input type="radio" id="optionG" name="question3" value="carrot">
                 <label for="optionG">Carrot</label><br>
 
-                <input type="radio" id="optionH" name="question3" value="honey" onclick="answerQuestion(this.value, 'question4')">
+                <input type="radio" id="optionH" name="question3" value="honey">
                 <label for="optionH">Honey</label><br>
 
-                <input type="radio" id="optionI" name="question3" value="fish" onclick="answerQuestion(this.value, 'question4')">
+                <input type="radio" id="optionI" name="question3" value="fish">
                 <label for="optionI">Fish</label><br>
             </form>
+            <button onclick="answerQuestion(document.querySelector('input[name=question3]:checked').value, 'question4')">Next</button>
         </center>
     </div>
 
@@ -176,21 +168,22 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
         <center>
             <div id="content2" class="w3-container">
-                <p>What is your favorite hobby?</p>
+                <p>What is your favorite activity?</p>
             </div>
 
             <!--Form element. This allows for user input in HTML.-->
             <form>
-                <!--Radio buttons for hobby selection.-->
-                <input type="radio" id="optionJ" name="question4" value="reading" onclick="answerQuestion(this.value, 'question5')">
+                <!--Radio buttons for activity selection.-->
+                <input type="radio" id="optionJ" name="question4" value="reading">
                 <label for="optionJ">Reading</label><br>
 
-                <input type="radio" id="optionK" name="question4" value="gardening" onclick="answerQuestion(this.value, 'finalpage')">
+                <input type="radio" id="optionK" name="question4" value="gardening">
                 <label for="optionK">Gardening</label><br>
 
-                <input type="radio" id="optionL" name="question4" value="drawing" onclick="answerQuestion(this.value, 'finalpage')">
+                <input type="radio" id="optionL" name="question4" value="drawing">
                 <label for="optionL">Drawing</label><br>
             </form>
+            <button onclick="answerQuestion(document.querySelector('input[name=question4]:checked').value, 'question5')">Next</button>
         </center>
     </div>
 
@@ -208,15 +201,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             <!--Form element. This allows for user input in HTML.-->
             <form>
                 <!--Radio buttons for relaxation place selection.-->
-                <input type="radio" id="optionM" name="question5" value="bed" onclick="answerQuestion(this.value, 'finalpage')">
+                <input type="radio" id="optionM" name="question5" value="bed">
                 <label for="optionM">Bed</label><br>
 
-                <input type="radio" id="optionN" name="question5" value="garden" onclick="answerQuestion(this.value, 'finalpage')">
+                <input type="radio" id="optionN" name="question5" value="garden">
                 <label for="optionN">Garden</label><br>
 
-                <input type="radio" id="optionO" name="question5" value="sofa" onclick="answerQuestion(this.value, 'finalpage')">
+                <input type="radio" id="optionO" name="question5" value="sofa">
                 <label for="optionO">Sofa</label><br>
             </form>
+            <button onclick="answerQuestion(document.querySelector('input[name=question5]:checked').value, 'finalpage')">Next</button>
         </center>
     </div>
 
@@ -230,8 +224,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             <div id="finalcontent" class="w3-container">
                 <p id="finalResult"></p>
             </div>
-
-            <a href="#content" onclick="resetQuiz();" class="w3-btn w3-black">Take Again</a>
         </center>
     </div>
 
