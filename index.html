@@ -11,13 +11,31 @@
     var plushie = "";
 
     function answerQuestion1(option) {
-        if (option === "A") {
-            plushie = "Teddy Bear";
-        } else if (option === "B") {
-            plushie = "Bunny";
-        } else if (option === "C") {
-            plushie = "Kitten";
-        }
+        plushie += option;
+        document.getElementById("question1").style.display = "none";
+        document.getElementById("question2").style.display = "block";
+    }
+
+    function answerQuestion2(option) {
+        plushie += option;
+        document.getElementById("question2").style.display = "none";
+        document.getElementById("question3").style.display = "block";
+    }
+
+    function answerQuestion3(option) {
+        plushie += option;
+        document.getElementById("question3").style.display = "none";
+        document.getElementById("question4").style.display = "block";
+    }
+
+    function answerQuestion4(option) {
+        plushie += option;
+        document.getElementById("question4").style.display = "none";
+        document.getElementById("question5").style.display = "block";
+    }
+
+    function answerQuestion5(option) {
+        plushie += option;
         goToFinalPage();
     }
 
@@ -27,6 +45,8 @@
 
     function resetQuiz() {
         plushie = "";
+        document.getElementById("question5").style.display = "none";
+        document.getElementById("content").style.display = "block";
     }
 </script>
 
@@ -36,24 +56,20 @@
     }
 
     .page {
+        display: none;
         width: 100vw;
         height: 100vh;
         position: fixed;
         top: 0;
-        left: -100vw;
+        left: 0;
         overflow-y: auto;
         z-index: 0;
         background-color: hsl(0,0%,100%);
     }
-
-    .page:target {
-        left: 0vw;
-        z-index: 1;
-    }
 </style>
 
 <body>
-<div id="content" class="w3-container">
+<div id="content" class="w3-container page">
     <div id="header" class="w3-container w3-flat-carrot">
         <h1>Which Plushie Are You?</h1>
     </div>
@@ -65,7 +81,7 @@
     <p>Answer the questions to find out which plushie matches your personality.</p>
 </div>
 
-<div id="question1" class="page">
+<div id="question1" class="w3-container page">
     <div id="header2" class="w3-container w3-flat-carrot">
         <h1>Question 1</h1>
     </div>
@@ -76,30 +92,130 @@
 
     <center>
         <form>
-            <input type="radio" id="optionA" name="question1" value="A">
-            <label for="optionA"><img src="teddy_bear.jpg" alt="Teddy Bear"></label><br>
+            <input type="radio" id="optionA" name="question1" value="Teddy Bear">
+            <label for="optionA">Teddy Bear</label><br>
 
-            <input type="radio" id="optionB" name="question1" value="B">
-            <label for="optionB"><img src="bunny.jpg" alt="Bunny"></label><br>
+            <input type="radio" id="optionB" name="question1" value="Bunny">
+            <label for="optionB">Bunny</label><br>
 
-            <input type="radio" id="optionC" name="question1" value="C">
-            <label for="optionC"><img src="kitten.jpg" alt="Kitten"></label><br><br>
+            <input type="radio" id="optionC" name="question1" value="Kitty">
+            <label for="optionC">Kitty</label><br><br>
 
             <button type="button" onclick="answerQuestion1(document.querySelector('input[name=question1]:checked').value)">Next</button>
         </form>
     </center>
 </div>
 
-<div id="finalpage" class="page">
-    <div id="finalheader" class="w3-container w3-flat-carrot">
-        <h1>Result</h1>
+<div id="question2" class="w3-container page">
+    <div id="header2" class="w3-container w3-flat-carrot">
+        <h1>Question 2</h1>
+    </div>
+
+    <div id="content2" class="w3-container">
+        <p>What is your favorite animal?</p>
     </div>
 
     <center>
-        <div id="finalcontent" class="w3-container">
-            <p id="finalResult"></p>
-        </div>
+        <form>
+            <input type="radio" id="optionA" name="question2" value="Teddy Bear">
+            <label for="optionA">Teddy Bear</label><br>
 
+            <input type="radio" id="optionB" name="question2" value="Bunny">
+            <label for="optionB">Bunny</label><br>
+
+            <input type="radio" id="optionC" name="question2" value="Kitty">
+            <label for="optionC">Kitty</label><br><br>
+
+            <button type="button" onclick="answerQuestion2(document.querySelector('input[name=question2]:checked').value)">Next</button>
+        </form>
+    </center>
+</div>
+
+<div id="question3" class="w3-container page">
+    <div id="header2" class="w3-container w3-flat-carrot">
+        <h1>Question 3</h1>
+    </div>
+
+    <div id="content2" class="w3-container">
+        <p>What is your favorite animal?</p>
+    </div>
+
+    <center>
+        <form>
+            <input type="radio" id="optionA" name="question3" value="Teddy Bear">
+            <label for="optionA">Teddy Bear</label><br>
+
+            <input type="radio" id="optionB" name="question3" value="Bunny">
+            <label for="optionB">Bunny</label><br>
+
+            <input type="radio" id="optionC" name="question3" value="Kitty">
+            <label for="optionC">Kitty</label><br><br>
+
+            <button type="button" onclick="answerQuestion3(document.querySelector('input[name=question3]:checked').value)">Next</button>
+        </form>
+    </center>
+</div>
+
+<div id="question4" class="w3-container page">
+    <div id="header2" class="w3-container w3-flat-carrot">
+        <h1>Question 4</h1>
+    </div>
+
+    <div id="content2" class="w3-container">
+        <p>What is your favorite animal?</p>
+    </div>
+
+    <center>
+        <form>
+            <input type="radio" id="optionA" name="question4" value="Teddy Bear">
+            <label for="optionA">Teddy Bear</label><br>
+
+            <input type="radio" id="optionB" name="question4" value="Bunny">
+            <label for="optionB">Bunny</label><br>
+
+            <input type="radio" id="optionC" name="question4" value="Kitty">
+            <label for="optionC">Kitty</label><br><br>
+
+            <button type="button" onclick="answerQuestion4(document.querySelector('input[name=question4]:checked').value)">Next</button>
+        </form>
+    </center>
+</div>
+
+<div id="question5" class="w3-container page">
+    <div id="header2" class="w3-container w3-flat-carrot">
+        <h1>Question 5</h1>
+    </div>
+
+    <div id="content2" class="w3-container">
+        <p>What is your favorite animal?</p>
+    </div>
+
+    <center>
+        <form>
+            <input type="radio" id="optionA" name="question5" value="Teddy Bear">
+            <label for="optionA">Teddy Bear</label><br>
+
+            <input type="radio" id="optionB" name="question5" value="Bunny">
+            <label for="optionB">Bunny</label><br>
+
+            <input type="radio" id="optionC" name="question5" value="Kitty">
+            <label for="optionC">Kitty</label><br><br>
+
+            <button type="button" onclick="answerQuestion5(document.querySelector('input[name=question5]:checked').value)">Next</button>
+        </form>
+    </center>
+</div>
+
+<div id="finalpage" class="w3-container page">
+    <div id="header2" class="w3-container w3-flat-carrot">
+        <h1>Result</h1>
+    </div>
+
+    <div id="content2" class="w3-container">
+        <p id="finalResult"></p>
+    </div>
+
+    <center>
         <a href="#content" onclick="resetQuiz();" class="w3-btn w3-black">Take Again</a>
     </center>
 </div>
@@ -107,5 +223,6 @@
 <footer class="w3-bottom w3-container w3-flat-carrot">
     <p>Developed by [Your Name]</p>
 </footer>
+
 </body>
 </html>
