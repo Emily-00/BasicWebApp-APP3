@@ -39,22 +39,31 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 	function answerQuestion1(option) {
 		plushie += option;
-		alert("You just selected: " + option);
 		document.getElementById("question1").style.display = "none";
 		document.getElementById("question2").style.display = "block";
 	}
 
 	function answerQuestion2(option) {
 		plushie += option;
-		alert("You just selected: " + option);
 		document.getElementById("question2").style.display = "none";
 		document.getElementById("question3").style.display = "block";
 	}
 
 	function answerQuestion3(option) {
 		plushie += option;
-		alert("You just selected: " + option);
 		document.getElementById("question3").style.display = "none";
+		document.getElementById("question4").style.display = "block";
+	}
+
+	function answerQuestion4(option) {
+		plushie += option;
+		document.getElementById("question4").style.display = "none";
+		document.getElementById("question5").style.display = "block";
+	}
+
+	function answerQuestion5(option) {
+		plushie += option;
+		document.getElementById("question5").style.display = "none";
 		document.getElementById("finalpage").style.display = "block";
 		document.getElementById("finalResult").innerHTML = "You are a " + plushie + " plushie!";
 	}
@@ -123,14 +132,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<!--Form element. This allows for user input in HTML.-->
 	<form>
 		<!--Radio buttons for color selection.-->
-		<input type="radio" id="optionA" name="question1" value="Red" onclick="answerQuestion1(this.value)">
-		<label for="optionA">Red</label><br>
+		<input type="radio" id="optionA" name="question1" value="Bunny" onclick="answerQuestion1(this.value)">
+		<label for="optionA">Bunny</label><br>
 
-		<input type="radio" id="optionB" name="question1" value="Blue" onclick="answerQuestion1(this.value)">
-		<label for="optionB">Blue</label><br>
+		<input type="radio" id="optionB" name="question1" value="Bear" onclick="answerQuestion1(this.value)">
+		<label for="optionB">Bear</label><br>
 
-		<input type="radio" id="optionC" name="question1" value="Green" onclick="answerQuestion1(this.value)">
-		<label for="optionC">Green</label><br>
+		<input type="radio" id="optionC" name="question1" value="Cat" onclick="answerQuestion1(this.value)">
+		<label for="optionC">Cat</label><br>
 	</form>
     
   </center>
@@ -146,17 +155,17 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   <center>
     
     	<div id="content2" class="w3-container">
-        	<p>What is your favorite animal?</p>    
+        	<p>What is your favorite activity?</p>    
     	</div>
 	
 	<!--Form element. This allows for user input in HTML.-->
 	<form>
-		<!--Radio buttons for animal selection.-->
-		<input type="radio" id="optionA" name="question2" value="Bear" onclick="answerQuestion2(this.value)">
-		<label for="optionA">Bear</label><br>
+		<!--Radio buttons for activity selection.-->
+		<input type="radio" id="optionA" name="question2" value="Bunny" onclick="answerQuestion2(this.value)">
+		<label for="optionA">Bunny</label><br>
 
-		<input type="radio" id="optionB" name="question2" value="Bunny" onclick="answerQuestion2(this.value)">
-		<label for="optionB">Bunny</label><br>
+		<input type="radio" id="optionB" name="question2" value="Bear" onclick="answerQuestion2(this.value)">
+		<label for="optionB">Bear</label><br>
 
 		<input type="radio" id="optionC" name="question2" value="Cat" onclick="answerQuestion2(this.value)">
 		<label for="optionC">Cat</label><br>
@@ -174,26 +183,83 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   <center>
     
     	<div id="content2" class="w3-container">
-        	<p>What is your favorite activity?</p>    
+        	<p>What is your favorite food?</p>    
     	</div>
 	
 	<!--Form element. This allows for user input in HTML.-->
 	<form>
-		<!--Radio buttons for activity selection.-->
-		<input type="radio" id="optionA" name="question3" value="Reading" onclick="answerQuestion3(this.value)">
-		<label for="optionA">Reading</label><br>
+		<!--Radio buttons for food selection.-->
+		<input type="radio" id="optionA" name="question3" value="Bunny" onclick="answerQuestion3(this.value)">
+		<label for="optionA">Bunny</label><br>
 
-		<input type="radio" id="optionB" name="question3" value="Playing" onclick="answerQuestion3(this.value)">
-		<label for="optionB">Playing</label><br>
+		<input type="radio" id="optionB" name="question3" value="Bear" onclick="answerQuestion3(this.value)">
+		<label for="optionB">Bear</label><br>
 
-		<input type="radio" id="optionC" name="question3" value="Sleeping" onclick="answerQuestion3(this.value)">
-		<label for="optionC">Sleeping</label><br>
+		<input type="radio" id="optionC" name="question3" value="Cat" onclick="answerQuestion3(this.value)">
+		<label for="optionC">Cat</label><br>
 	</form>
     
   </center>
 </div>  
 
-<!--LAST SUBPAGE-->
+<!--FOURTH SUBPAGE-->
+<div id="question4" class="page">
+	<div id="header2" class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	
+  <center>
+    
+    	<div id="content2" class="w3-container">
+        	<p>What is your favorite hobby?</p>    
+    	</div>
+	
+	<!--Form element. This allows for user input in HTML.-->
+	<form>
+		<!--Radio buttons for hobby selection.-->
+		<input type="radio" id="optionA" name="question4" value="Bunny" onclick="answerQuestion4(this.value)">
+		<label for="optionA">Bunny</label><br>
+
+		<input type="radio" id="optionB" name="question4" value="Bear" onclick="answerQuestion4(this.value)">
+		<label for="optionB">Bear</label><br>
+
+		<input type="radio" id="optionC" name="question4" value="Cat" onclick="answerQuestion4(this.value)">
+		<label for="optionC">Cat</label><br>
+	</form>
+    
+  </center>
+</div>  
+
+<!--FIFTH SUBPAGE-->
+<div id="question5" class="page">
+	<div id="header2" class="w3-container w3-flat-carrot">
+		<h1>Question 5</h1>
+	</div>
+	
+  <center>
+    
+    	<div id="content2" class="w3-container">
+        	<p>What is your favorite place to relax?</p>    
+    	</div>
+	
+	<!--Form element. This allows for user input in HTML.-->
+	<form>
+		<!--Radio buttons for relaxation place selection.-->
+		<input type="radio" id="optionA" name="question5" value="Bunny" onclick="answerQuestion5(this.value)">
+		<label for="optionA">Bunny</label><br>
+
+		<input type="radio" id="optionB" name="question5" value="Bear" onclick="answerQuestion5(this.value)">
+		<label for="optionB">Bear</label><br>
+
+		<input type="radio" id="optionC" name="question5" value="Cat" onclick="answerQuestion5(this.value)">
+		<label for="optionC">Cat</label><br>
+	</form>
+    
+  </center>
+</div>  
+
+
+<!--FINAL SUBPAGE-->
 <div id="finalpage" class="page">
 	<div id="finalheader" class="w3-container w3-flat-carrot">
 		<h1>Result</h1>
@@ -209,7 +275,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     
   </center>
 </div>
-  
   
 <!--Footer!-->
 <footer class="w3-bottom w3-container w3-flat-carrot">
