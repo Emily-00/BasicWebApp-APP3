@@ -40,6 +40,21 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         document.getElementById(nextQuestionId).style.display = "block";
         window.location.href = "#" + nextQuestionId;
     }
+
+    // Function to generate a random plushie result
+    function generateRandomPlushie() {
+        var plushies = ["Bunny", "Bear", "Cat"];
+        var randomIndex = Math.floor(Math.random() * plushies.length);
+        return plushies[randomIndex];
+    }
+
+    // Function to show the final result
+    function showResult() {
+        var result = generateRandomPlushie();
+        document.getElementById("finalResult").innerHTML = "You are a " + result + " plushie!";
+        document.getElementById("finalpage").style.display = "block";
+        window.location.href = "#finalpage";
+    }
 </script>
 
 <!--CSS webpage style/format settings.-->
@@ -210,7 +225,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
                 <input type="radio" id="optionO" name="question5" value="sofa">
                 <label for="optionO">Sofa</label><br>
             </form>
-            <button onclick="answerQuestion(document.querySelector('input[name=question5]:checked').value, 'finalpage')">Next</button>
+            <button onclick="showResult()">Next</button>
         </center>
     </div>
 
