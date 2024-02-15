@@ -41,24 +41,21 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         window.location.href = "#" + nextQuestionId;
     }
 
-    // Function to generate a random plushie result
+    function showResult() {
+        var result = generateRandomPlushie();
+        document.getElementById("finalResult").innerHTML = "You are a " + result.plushieName + "!";
+        document.getElementById("plushieImage").src = result.plushieImage;
+        document.getElementById("finalpage").style.display = "block";
+    }
+
     function generateRandomPlushie() {
         var plushies = [
-            { name: "Bunny", image: "https://i.imgur.com/el84qqL.png" },
-            { name: "Bear", image: "https://i.imgur.com/0kz06DP.png" },
-            { name: "Cat", image: "https://i.imgur.com/1hCjdHi.png" }
+            { plushieName: "Bunny", plushieImage: "https://i.imgur.com/el84qqL.png" },
+            { plushieName: "Bear", plushieImage: "https://i.imgur.com/0kz06DP.png" },
+            { plushieName: "Cat", plushieImage: "https://i.imgur.com/1hCjdHi.png" }
         ];
         var randomIndex = Math.floor(Math.random() * plushies.length);
         return plushies[randomIndex];
-    }
-
-    // Function to show the final result
-    function showResult() {
-        var result = generateRandomPlushie();
-        document.getElementById("finalResult").innerHTML = "You are a " + result.name + " plushie!";
-        document.getElementById("plushieImage").src = result.image;
-        document.getElementById("finalpage").style.display = "block";
-        window.location.href = "#finalpage";
     }
 </script>
 
@@ -81,6 +78,15 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
     .page:not(:target) {
         display: none;
+    }
+    
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #f1f1f1;
+        text-align: center;
+        padding: 10px;
     }
 </style>
 
@@ -243,15 +249,15 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         <center>
             <div id="finalcontent" class="w3-container">
                 <p id="finalResult"></p>
-                <img id="plushieImage" src="" alt="Plushie Image" style="max-width: 200px;">
+                <img id="plushieImage" src="" alt="Plushie Image">
             </div>
         </center>
     </div>
 </div>
 
 <footer>
-    <p>Emily Zhang </p>
+    <p>Developed by Emily</p>
 </footer>
-  
+
 </body>
 </html>
